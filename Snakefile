@@ -11,6 +11,9 @@
 
 configfile: "config.yaml"
 
+wildcard_constraints:
+     gene = r"[^./]+"
+
 GENUS = config["genus"]
 GENES = config["genes"]
 
