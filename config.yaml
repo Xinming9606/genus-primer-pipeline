@@ -1,0 +1,45 @@
+# ===========================================================================
+# genus-primer-pipeline configuration
+# ===========================================================================
+
+# --- Required: who and what ---
+genus: Bacillus           # any bacterial genus name (resolved to taxid via Entrez)
+domain: bacteria          # ncbi-genome-download domain: bacteria, archaea, etc.
+
+# Required by NCBI Entrez API. Use your real email; NCBI may contact if there
+# are issues with your usage.
+ncbi_email: xuxinming9606@gmail.com
+
+# --- Target gene(s) ---
+# List one or more housekeeping genes. Each will be processed independently;
+# if more than one is given, a comparison report is also produced.
+genes:
+  - tuf
+  # - rpoB
+  # - gyrB
+  # - recA
+  # - 16S
+
+# Some genes are annotated under multiple names across genomes. List any known
+# variants here so the extractor catches all of them. The list keys must match
+# entries in `genes` above. If a gene isn't listed, the extractor falls back
+# to matching the gene name itself.
+gene_aliases:
+  tuf:  [tuf, tufA, tufB]
+  rpoB: [rpoB]
+  gyrB: [gyrB]
+  recA: [recA]
+  "16S": ["16S ribosomal RNA", "16S rRNA"]
+
+# --- Primer design parameters ---
+primer:
+  length_min: 18           # primer length range (nt)
+  length_max: 25
+  tm_min: 55               # melting temperature range (°C)
+  tm_max: 65
+  gc_min: 40               # GC content range (%)
+  gc_max: 60
+  amplicon_min: 200        # amplicon size range (bp)
+  amplicon_max: 500
+  max_degeneracy: 4        # max allowed IUPAC degeneracy fold per primer
+  top_n: 5                 # number of top-ranked primer pairs to report
