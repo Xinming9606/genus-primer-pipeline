@@ -3,7 +3,7 @@
 # ===========================================================================
 
 # --- Required: who and what ---
-genus: Bacillus           # any bacterial genus name (resolved to taxid via Entrez)
+genus: Listeria           # any bacterial genus name (resolved to taxid via Entrez)
 domain: bacteria          # ncbi-genome-download domain: bacteria, archaea, etc.
 
 # Required by NCBI Entrez API. Use your real email; NCBI may contact if there
