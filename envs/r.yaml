@@ -1,0 +1,12 @@
+name: r-primers
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - r-base>=4.3
+  - r-seqinr
+  - r-zoo
+  - r-knitr
+  - r-rmarkdown
+  - r-kableextra
+  - pandoc

@@ -1,0 +1,10 @@
+name: seqtools
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.11
+  - biopython
+  - vsearch
+  - muscle=5
+  - seqkit
