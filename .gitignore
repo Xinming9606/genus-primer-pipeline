@@ -1,0 +1,28 @@
+# Snakemake
+.snakemake/
+logs/
+*.log
+
+# Pipeline outputs (reproducible from pipeline, no need to track)
+results/
+ncbi_genome/
+ncbi_genome_de/
+
+# Python
+*.pyc
+__pycache__/
+*.egg-info/
+
+# R
+.Rhistory
+.RData
+.Rproj.user/
+
+# OS / editor
+.DS_Store
+.ipynb_checkpoints/
+*.swp
+
+# Conda envs (if created locally inside project)
+.conda/
+envs/*/
