@@ -25,6 +25,22 @@ The pipeline needs **conda** (or **mamba** / **micromamba**) and an active
 internet connection on first run. All other dependencies are installed
 automatically into per-rule environments by Snakemake.
 
+### Alternative: single-environment install (HPC / no conda)
+
+Snakemake's `--use-conda` integration requires a `conda` executable on
+`PATH`. On HPC clusters that only ship `micromamba`, install all
+dependencies into a single environment and run without `--use-conda`:
+
+```bash
+micromamba env create -f envs/environment.yaml
+micromamba activate primer-pipeline
+snakemake --cores 4
+```
+
+The per-rule env files under `envs/` are still useful as documentation
+of which tools each rule needs — Snakemake silently ignores `conda:`
+directives when `--use-conda` isn't passed.
+
 ```bash
 # 1. Clone
 git clone git@github.com:Xinming9606/genus-primer-pipeline.git
