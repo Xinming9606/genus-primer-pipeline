@@ -26,3 +26,5 @@ __pycache__/
 # Conda envs (if created locally inside project)
 .conda/
 envs/*/
+test_data/
+run_*.log
